@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 
 class Counter extends Component {
-
-	// Set inital state - contains data the component needs
+	// Set inital state
 	state = {
 		count: 0,
 	};
 
-	handleIncrement() {
-		console.log('Increment clicked');
+	handleIncrement = () => {
+		this.setState({ count: this.state.count + 1 });
 	}
 
 	render() {
