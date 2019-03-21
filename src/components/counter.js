@@ -17,9 +17,9 @@ class Counter extends Component {
 	render() {
 		return (
 			<div className="container pt-5">
-				<button onClick={this.handleDecrement} className="btn btn-secondary btn-sm">Decrement</button>
+				<button onClick={this.handleDecrement} className="btn btn-secondary btn-sm">-</button>
 				<span className={ this.getBadgeClasses() }>{ this.formatCount() }</span>
-				<button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
+				<button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">+</button>
 			</div>
 		);
 	}
