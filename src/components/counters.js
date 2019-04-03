@@ -11,6 +11,14 @@ class Counters extends Component {
 		]
 	}
 
+	handleIncrement = counter => {
+		const counters = [...this.state.counters];// Clone counters array
+		const index = counters.indexOf(counter);
+		counters[index] = {...counter} // Clone counter object (agrument recieved)
+		counters[index].value++;
+		this.setState({ counters })
+	}
+
 	handleReset = () => {
 		// Loop through counters and set value to 0
 		const counters = this.state.counters.map(c => {
@@ -33,13 +41,12 @@ class Counters extends Component {
 	render() {
 		return (
 			<div>
-
 				<div className="container pt-5">
 					<button className="btn btn-primary btn-sm" onClick={this.handleReset}>Reset</button>
 				</div>
 
 				{ this.state.counters.map(counter => (
-					<Counter key={counter.id} onDelete={this.handleDelete} counter={counter}>
+					<Counter key={counter.id} onDelete={this.handleDelete} onIncrement={this.handleIncrement} counter={counter}>
 						<h4>Product #{counter.id}</h4>
 					</Counter>
 				))}
