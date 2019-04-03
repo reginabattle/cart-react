@@ -3,18 +3,20 @@ import React, { Component } from 'react';
 class Counter extends Component {
 	// Set inital state
 	state = {
-		count: 0,
+		value: this.props.value,
 	};
 
 	handleIncrement = () => {
-		this.setState({ count: this.state.count + 1 });
+		this.setState({ value: this.state.value + 1 });
 	};
 
 	handleDecrement = () => {
-		this.setState({ count: this.state.count - 1 });
+		this.setState({ value: this.state.value - 1 });
 	};
 
 	render() {
+		console.log('props', this.props);
+
 		return (
 			<div className="container pt-5">
 				<button onClick={this.handleDecrement} className="btn btn-secondary btn-sm">-</button>
@@ -27,14 +29,14 @@ class Counter extends Component {
 	// Get badge classes 
 	getBadgeClasses() {
 		let classes = "badge m-2 badge-";
-		classes += this.state.count === 0 ? 'warning' : 'info';
+		classes += this.state.value === 0 ? 'warning' : 'info';
 		return classes;
 	};
 
-	// Check the value of the count property
+	// Check the value of the value property
 	formatCount() {
-		const { count } = this.state;
-		return count === 0 ? 'Zero' : count; 
+		const { value } = this.state;
+		return value === 0 ? 'Zero' : value; 
 	};
 
 }
