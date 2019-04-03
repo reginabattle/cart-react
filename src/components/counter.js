@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Counter extends Component {
 	// Set inital state
 	state = {
-		value: this.props.value,
+		value: this.props.value
 	};
 
 	handleIncrement = () => {
@@ -19,6 +19,7 @@ class Counter extends Component {
 
 		return (
 			<div className="container pt-5">
+				{ this.props.children }
 				<button onClick={this.handleDecrement} className="btn btn-secondary btn-sm">-</button>
 				<span className={ this.getBadgeClasses() }>{ this.formatCount() }</span>
 				<button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">+</button>
