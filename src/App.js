@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import Nav from './components/nav';
+import Counters from './components/counters';
 
 class App extends Component {
 	render() {
 		return (
-			<main className="container">
-				<h1>Hello world</h1>
+			<React.Fragment>
+				<Nav />
+				<main className="container">
+					<Counters />
 			</main>
+			</React.Fragment>
 		);
 	}
 }
