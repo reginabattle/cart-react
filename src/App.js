@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Nav from './components/nav';
 import Counters from './components/counters';
+import Footer from './components/footer';
 
 class App extends Component {
 	state = {
@@ -64,6 +65,7 @@ class App extends Component {
 						onDecrement={this.handleDecrement}
 						onDelete={this.handleDelete} />
 				</main>
+				<Footer />
 			</React.Fragment>
 		);
 	}
